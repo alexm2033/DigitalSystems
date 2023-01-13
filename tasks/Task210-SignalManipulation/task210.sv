@@ -44,36 +44,44 @@ begin
 	
 	// 1 - Set bb to binary 0 using a decimal literal
 	// WRITE SOLUTION HERE
-	#10ps assert (bb==1) passed(); else failed();
+	bb = 1'd0;
+	#10ps assert (bb==0) passed(); else failed();
 
 	// 2 - Set databyte to binary 10101111 using a binary literal
 	// WRITE SOLUTION HERE
+	databyte = 8'b10101111;
 	#10ps assert (databyte==8'hAF) passed(); else failed();
 
 	// 3 - Set bit 6 of databyte to 1
 	// WRITE SOLUTION HERE
+	databyte [6] = 1;
 	#10ps assert ((databyte & 8'b01000000) != 8'd0) passed(); else failed();
 
 	// 4 - Set bits 3..0 of databyte to binary 0000
 	// WRITE SOLUTION HERE
+	databyte = {4'he, 4'h0};
 	#10ps assert ((databyte & 8'h0F) == 4'h0) passed(); else failed();
 
 	// 5 - Set datanibble to equal the most significant bits of databyte
 	// WRITE SOLUTION HERE
+	datanibble = databyte [7:4];
 	#10ps assert (datanibble == 4'b1110) passed(); else failed();
 
 	// 6 - Using a single statement (concatenation), set aa, bb and yy to bits 2,1 and 0 of datanibble
 	// WRITE SOLUTION HERE
+	{aa, bb, yy} = datanibble[2:0];
 	#10ps assert ((aa == 1) && (bb == 1) && (yy == 0))  passed(); else failed();
 
 	// 7 - Set the most significant 4 bits of databyte to datanibble, and the least significant 4 bits to the inverse of datanibble
 	// WRITE SOLUTION HERE
+	databyte = {datanibble, ~datanibble};
 	#10ps assert (databyte == 8'b1110_0001)  passed(); else failed();
 
 	// UNPACKED ARRAYS
 
 	// 8 - Initialise arrayOfBits so that all values are equal to 0 - do not use the for-loop
    // WRITE SOLUTION HERE
+	arrayOfBits[7:0] = {0, 0, 0, 0, 0, 0, 0, 0};
 	// Test - write above this line
 	for (int n=0; n<8; n = n+1)
 	begin
@@ -82,10 +90,12 @@ begin
 
 	// 9 - Set elements 1 and 0 to binary 1 using a single statement
 	// WRITE SOLUTION HERE
+	arrayOfBits[1:0] = {1, 1};
 	#10ps assert ((arrayOfBits[1] == 1) &&  (arrayOfBits[0] == 1))  passed(); else failed();
 
 	// 10 -In one statement, initialise all elements in arrayOfNibbles with the binary value 1010
 	// WRITE SOLUTION HERE
+	arrayOfNibbles[7:0] = {4'b1010, 4'b1010, 4'b1010, 4'b1010, 4'b1010, 4'b1010, 4'b1010, 4'b1010};
 	// Test - only write above
 	for (int n=0; n<8; n = n+1)
 	begin
