@@ -1,6 +1,6 @@
-module adder_N_tb;
+module adder_8_tb;
 
-	parameter N = 3;
+	parameter N = 8;
 
 	logic [N-1:0] P, Q;
 	logic [N-1:0] SUM;
@@ -13,7 +13,6 @@ module adder_N_tb;
 	adder_N #(.N(4)) u2(SUM, Cout, P[7:4], Q[7:4], Cin);
 
 	assign u2 Cin = u1 Cout;
-
 
 	initial 
 	begin
