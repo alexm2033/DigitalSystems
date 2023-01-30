@@ -11,5 +11,5 @@ wire andB;
 not u1 (invS, s);
 and u2 (andA, a, invS);
 and u3 (andB, b, s);
-or u4 (y, andA, andB);
+or  u4 (y, andA, andB);
 endmodule
