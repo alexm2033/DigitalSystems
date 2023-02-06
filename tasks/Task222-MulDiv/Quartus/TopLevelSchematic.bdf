@@ -159,7 +159,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 32 624 200 640)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "A[7..0]" (rect 5 0 39 12)(font "Arial" ))
+	(text "A[7..0]" (rect 5 0 38 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -455,7 +455,7 @@ https://fpgasoftware.intel.com/eula.
 	(annotation_block (parameter)(rect 1032 480 1207 518))
 )
 (symbol
-	(rect 392 184 576 264)
+	(rect 392 176 576 256)
 	(text "mult_gates" (rect 5 0 59 12)(font "Arial" ))
 	(text "U1_Gates" (rect 8 64 54 81)(font "Intel Clear" ))
 	(port
@@ -652,16 +652,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 960 344)
 )
 (connector
-	(pt 336 216)
-	(pt 392 216)
-	(bus)
-)
-(connector
-	(pt 368 232)
-	(pt 392 232)
-	(bus)
-)
-(connector
 	(pt 336 312)
 	(pt 392 312)
 	(bus)
@@ -672,28 +662,8 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 336 216)
-	(pt 336 312)
-	(bus)
-)
-(connector
-	(pt 368 232)
-	(pt 368 328)
-	(bus)
-)
-(connector
-	(pt 336 312)
-	(pt 336 408)
-	(bus)
-)
-(connector
 	(pt 336 408)
 	(pt 336 632)
-	(bus)
-)
-(connector
-	(pt 368 328)
-	(pt 368 424)
 	(bus)
 )
 (connector
@@ -739,12 +709,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(text "prod1[15..0]" (rect 586 200 642 217)(font "Intel Clear" ))
-	(pt 576 216)
-	(pt 640 216)
-	(bus)
-)
-(connector
 	(text "prod2[15..0]" (rect 586 296 642 313)(font "Intel Clear" ))
 	(pt 576 312)
 	(pt 640 312)
@@ -770,6 +734,42 @@ https://fpgasoftware.intel.com/eula.
 	(text "prod3[15]" (rect 498 96 544 113)(font "Intel Clear" ))
 	(pt 592 112)
 	(pt 488 112)
+)
+(connector
+	(pt 336 208)
+	(pt 392 208)
+	(bus)
+)
+(connector
+	(pt 368 224)
+	(pt 392 224)
+	(bus)
+)
+(connector
+	(text "prod1[15..0]" (rect 586 192 642 209)(font "Intel Clear" ))
+	(pt 576 208)
+	(pt 640 208)
+	(bus)
+)
+(connector
+	(pt 336 208)
+	(pt 336 312)
+	(bus)
+)
+(connector
+	(pt 336 312)
+	(pt 336 408)
+	(bus)
+)
+(connector
+	(pt 368 224)
+	(pt 368 328)
+	(bus)
+)
+(connector
+	(pt 368 328)
+	(pt 368 424)
+	(bus)
 )
 (junction (pt 336 312))
 (junction (pt 368 328))
