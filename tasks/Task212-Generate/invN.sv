@@ -6,7 +6,7 @@ genvar i;
 genvar j;
 
 generate 
- for (i=0; i<N; i=i+2) 
+ for (i=0; i<N; i=i+1) 
  begin : i_loop1
 	if(i%2 == 0)
 	assign Y[i]=~X[i];
