@@ -26,5 +26,5 @@ begin
 	check(4'd0,  4'd0,  8'd0);
 	check(4'd15, 4'd15, 8'd225);
 end
-
+ 
 endmodule
