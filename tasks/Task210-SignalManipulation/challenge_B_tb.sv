@@ -17,15 +17,13 @@ assign {AA,BB,CC}= X;
 
 for (int i =0; i<8; i = i+1)
 begin
-	#50ps X =i;
+	 X =i;
+	#100ps;
 	if((i==2)||(i==5))
-	assert (YY==1) $display("passed %d", i);
-	
+	   assert (YY==1) $display("passed %d", i); else $display("ERROR");	
 	else
-	assert (YY!=1) $display("passed %d", i);
-
-
-	end
+     	   assert (YY!=1) $display("passed %d", i); else $display("ERROR");
+end
 #50ps;
 X = 3'b010;
 #100ps;
