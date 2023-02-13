@@ -15,88 +15,62 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Thu Feb 10 11:25:11 2022"
+// CREATED		"Mon Feb 13 17:29:24 2023"
 
-module cascaded_dff(
-	CLK,
-	N_RESET,
-	DATA_IN,
-	Q
+module TopLevelSchematic(
+	CLOCK_50,
+	KEY,
+	SW,
+	LED
 );
 
 
-input wire	CLK;
-input wire	N_RESET;
-input wire	DATA_IN;
-output wire	[7:0] Q;
+input wire	CLOCK_50;
+input wire	[1:0] KEY;
+input wire	[3:0] SW;
+output wire	[7:0] LED;
 
-wire	ares;
-wire	ck;
-wire	D;
-wire	[7:0] led;
-
-
-
-
-
-d_ff	b2v_inst11(
-	.D(D),
-	.CLK(ck),
-	.n_Reset(ares),
-	.Q(led[7]));
+wire	CK1;
+wire	CK2;
+wire	CLK_100K;
+wire	CLK_100M;
+wire	CLK_1M;
+wire	[7:0] led_ALTERA_SYNTHESIZED;
+wire	PLL_LOCKED;
+wire	SYNTHESIZED_WIRE_0;
 
 
-d_ff	b2v_inst12(
-	.D(led[7]),
-	.CLK(ck),
-	.n_Reset(ares),
-	.Q(led[6]));
 
 
-d_ff	b2v_inst13(
-	.D(led[6]),
-	.CLK(ck),
-	.n_Reset(ares),
-	.Q(led[5]));
+
+clk_div_N	b2v_inst(
+	.clk(CLK_100K)
+	);
+	defparam	b2v_inst.N = 25000;
 
 
-d_ff	b2v_inst14(
-	.D(led[4]),
-	.CLK(ck),
-	.n_Reset(ares),
-	.Q(led[3]));
+clk_div_N	b2v_inst1(
+	.clk(CLK_100K),
+	.y(CK2));
+	defparam	b2v_inst1.N = 100000;
 
 
-d_ff	b2v_inst15(
-	.D(led[3]),
-	.CLK(ck),
-	.n_Reset(ares),
-	.Q(led[2]));
+cascaded_dff	b2v_inst2(
+	.DATA_IN(SYNTHESIZED_WIRE_0),
+	.CLK(CK2),
+	.N_RESET(KEY[0]),
+	.Q(led_ALTERA_SYNTHESIZED));
 
 
-d_ff	b2v_inst16(
-	.D(led[2]),
-	.CLK(ck),
-	.n_Reset(ares),
-	.Q(led[1]));
+pll_main	b2v_inst3(
+	.inclk0(CLOCK_50),
+	
+	
+	.c2(CLK_100K)
+	);
 
+assign	SYNTHESIZED_WIRE_0 =  ~KEY[1];
 
-d_ff	b2v_inst17(
-	.D(led[1]),
-	.CLK(ck),
-	.n_Reset(ares),
-	.Q(led[0]));
-
-
-d_ff	b2v_inst18(
-	.D(led[5]),
-	.CLK(ck),
-	.n_Reset(ares),
-	.Q(led[4]));
-
-assign	Q = led;
-assign	D = DATA_IN;
-assign	ck = CLK;
-assign	ares = N_RESET;
+assign	LED = led_ALTERA_SYNTHESIZED;
 
 endmodule

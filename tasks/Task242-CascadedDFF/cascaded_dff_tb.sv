@@ -20,7 +20,7 @@ end
 initial begin
 	CLK = 1;
 	repeat(17) 
-		#50ps CLK = ~CLK;
+		#1ps CLK = ~CLK;
 end
 
 //Input stimulus
