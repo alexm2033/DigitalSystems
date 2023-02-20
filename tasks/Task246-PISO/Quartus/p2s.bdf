@@ -72,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 368 368 536 384)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "EN" (rect 5 0 21 12)(font "Arial" ))
+	(text "EN" (rect 5 0 20 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -88,7 +88,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 368 264 536 280)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SHIFT" (rect 5 0 37 12)(font "Arial" ))
+	(text "SHIFT" (rect 5 0 36 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -653,44 +653,12 @@ https://fpgasoftware.intel.com/eula.
 	(pt 688 296)
 )
 (connector
-	(pt 688 328)
-	(pt 680 328)
-)
-(connector
-	(pt 680 328)
-	(pt 680 344)
-)
-(connector
-	(pt 616 376)
-	(pt 616 440)
-)
-(connector
-	(pt 616 440)
-	(pt 760 440)
-)
-(connector
-	(pt 760 440)
-	(pt 920 440)
-)
-(connector
-	(pt 608 360)
-	(pt 608 416)
-)
-(connector
 	(pt 608 416)
 	(pt 752 416)
 )
 (connector
 	(pt 752 416)
 	(pt 912 416)
-)
-(connector
-	(pt 616 344)
-	(pt 608 344)
-)
-(connector
-	(pt 608 344)
-	(pt 608 328)
 )
 (connector
 	(text "D[3]" (rect 514 280 534 297)(font "Intel Clear" ))
@@ -710,14 +678,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 840 232)
 )
 (connector
-	(pt 536 360)
-	(pt 608 360)
-)
-(connector
-	(pt 608 360)
-	(pt 616 360)
-)
-(connector
 	(pt 528 328)
 	(pt 528 312)
 )
@@ -730,12 +690,50 @@ https://fpgasoftware.intel.com/eula.
 	(pt 488 312)
 )
 (connector
-	(pt 616 376)
-	(pt 536 376)
+	(text "D[3..0]" (rect 546 192 576 209)(font "Intel Clear" ))
+	(pt 536 208)
+	(pt 584 208)
+	(bus)
 )
 (connector
-	(pt 648 400)
-	(pt 648 456)
+	(pt 688 328)
+	(pt 680 328)
+)
+(connector
+	(pt 608 344)
+	(pt 616 344)
+)
+(connector
+	(pt 608 328)
+	(pt 608 344)
+)
+(connector
+	(pt 680 328)
+	(pt 680 344)
+)
+(connector
+	(pt 536 360)
+	(pt 608 360)
+)
+(connector
+	(pt 608 360)
+	(pt 616 360)
+)
+(connector
+	(pt 608 360)
+	(pt 608 376)
+)
+(connector
+	(pt 608 376)
+	(pt 608 416)
+)
+(connector
+	(pt 536 376)
+	(pt 608 376)
+)
+(connector
+	(pt 608 376)
+	(pt 616 376)
 )
 (connector
 	(pt 536 456)
@@ -746,10 +744,20 @@ https://fpgasoftware.intel.com/eula.
 	(pt 792 456)
 )
 (connector
-	(text "D[3..0]" (rect 546 192 576 209)(font "Intel Clear" ))
-	(pt 536 208)
-	(pt 584 208)
-	(bus)
+	(pt 616 440)
+	(pt 760 440)
+)
+(connector
+	(pt 760 440)
+	(pt 920 440)
+)
+(connector
+	(pt 648 400)
+	(pt 648 456)
+)
+(connector
+	(pt 616 376)
+	(pt 616 440)
 )
 (junction (pt 952 456))
 (junction (pt 920 440))
@@ -759,9 +767,9 @@ https://fpgasoftware.intel.com/eula.
 (junction (pt 792 456))
 (junction (pt 752 416))
 (junction (pt 688 232))
-(junction (pt 616 376))
-(junction (pt 608 360))
 (junction (pt 648 456))
+(junction (pt 608 376))
+(junction (pt 608 360))
 (text "Load the parallel data work into DATAW" (rect 368 176 606 195)(font "Intel Clear" (font_size 8)))
 (text "Multiplexers select which data to present to each DFF" (rect 656 208 969 227)(font "Intel Clear" (font_size 8)))
 (text "Set SHIFT high to shift the bits right, presenting each in turn on the output" (rect 376 528 811 547)(font "Intel Clear" (font_size 8)))

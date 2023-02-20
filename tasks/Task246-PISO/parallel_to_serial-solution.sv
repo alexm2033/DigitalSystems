@@ -22,4 +22,4 @@ always_ff @(posedge CLK, negedge N_RESET) begin
 end
 
 endmodule
-
+ 
