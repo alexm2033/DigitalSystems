@@ -8,7 +8,7 @@ fsm_moore u2(.clk(clk), .reset(reset), .X(x), .Q(Q_moore));
 
 initial begin
    reset = '0;
-   #10ps reset = '1;
+   #100ps reset = '1;
 end
 
 initial begin

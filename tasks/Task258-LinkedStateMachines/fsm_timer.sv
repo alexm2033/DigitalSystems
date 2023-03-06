@@ -13,17 +13,17 @@ module fsm_timer #(parameter int unsigned N=256) (output logic READY, input logi
 
       //Update state - COMPLETE THIS
       case (state)
-      0:       next_state = ;       //First state
-      (N-1):   next_state = ;       //End state
-      default: next_state = ;       //Intermediate states
+      0:       next_state = (START==1) ? 1:0;       //First state
+      (N-1):   next_state = (RESET==0) ? (N-1):0;       //End state
+      default: next_state = (state+1);       //Intermediate states
       endcase
    end
 
    //Output logic -  COMPLETE THIS
    always_comb begin : output_logic
       case (state)
-      (N-1):   ;
-      default: ;
+      (N-1):    READY = 1;
+      default:  READY = 0;
       endcase
    end
 

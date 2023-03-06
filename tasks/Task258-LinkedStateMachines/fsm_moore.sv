@@ -12,13 +12,18 @@ always_comb begin : next_state_logic
    //COMPLETE THIS
    case(state)
 
-   IDLE:  ; 
+   IDLE: next_state = (X==1) ? ST : IDLE; 
 
-   ST:   ;
+   ST:   next_state = HD;
 
-   HD:   ;
+   HD:   if(X==0)
+		next_state = IDLE;
+	else if((X==1)&&(READY==1))
+		next_state = DT;
+	else
+		next_state = HD;
             
-   DT:   ;
+   DT:  next_state = DT;
             
    default:
          next_state = IDLE; 
@@ -37,12 +42,13 @@ end
 
 always_comb begin : output_logic
    //COMPLETE THIS
+	automatic logic Q = {START, RESET, Y};
    case(state)
-   IDLE:    ;
-   ST:      ;
-   HD:      ;
-   DT:      ;   
-   default: ;
+   IDLE:	Q = 3'b010;
+   ST:          Q = 3'b100;
+   HD:          Q = 3'b000;
+   DT:          Q = 3'b001;   
+   default: 	Q = 3'b000;
    endcase
 end
 
