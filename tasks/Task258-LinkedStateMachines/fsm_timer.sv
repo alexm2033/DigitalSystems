@@ -15,7 +15,7 @@ module fsm_timer #(parameter int unsigned N=256) (output logic READY, input logi
       case (state)
       0:       next_state = (START==1) ? 1:0;       //First state
       (N-1):   next_state = (RESET==0) ? (N-1):0;       //End state
-      default: next_state = (state+1);       //Intermediate states
+      default: next_state = (RESET==1) ? 0:(N+1);       //Intermediate states
       endcase
    end
 

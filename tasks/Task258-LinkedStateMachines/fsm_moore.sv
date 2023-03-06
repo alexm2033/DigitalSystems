@@ -48,7 +48,7 @@ always_comb begin : output_logic
    ST:          Q = 3'b100;
    HD:          Q = 3'b000;
    DT:          Q = 3'b001;   
-   default: 	Q = 3'b000;
+   default: 	Q = 3'b010;
    endcase
 end
 
